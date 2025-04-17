@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: bgShift 20s ease infinite;
+    color: #e2e8f0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  
+  @keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .subtitle {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .roadmap-vertical {
+    position: relative;
+    width: 100%;
+    height: 1800px;
+    padding: 50px 0;
+  }
+  
+  .road-line-vertical {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: rgba(0, 128, 255, 0.1);
+    border: 2px solid rgba(0, 128, 255, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 50px;
+    transform: translateX(-50%);
+    z-index: 1;
+    box-shadow: 0 0 30px rgba(0, 128, 255, 0.2);
+  }
+  
+  .road-divider {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8) 20px,
+      transparent 20px,
+      transparent 40px
+    );
+    transform: translateX(-50%);
+    z-index: 2;
+    filter: drop-shadow(0 0 6px white);
+  }
+  
+  .car-vertical {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: auto;
+    z-index: 3;
+    transition: top 0.6s ease-in-out;
+    filter: drop-shadow(0 0 12px #00c6ff);
+  }
+  
+  .car-vertical img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: rotate(270deg);
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .car-vertical.facing-up img {
+    transform: rotate(90deg);
+  }
+  
+  .car-vertical.facing-down img {
+    transform: rotate(270deg);
+  }
+  
+  .milestone-vertical {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin: 80px 0;
+  }
+  
+  /* ✅ Push milestone box further from road to avoid overlap */
+.milestone-vertical.left .content {
+    margin-left: -40px;   /* increased from 40px */
+    margin-right: auto;
+  }
+  
+  .milestone-vertical.right .content {
+    margin-right: -40px;  /* increased from 40px */
+    margin-left: auto;
+  }
+  
+  /* ✅ Limit max width and allow flex to shrink when needed */
+  .milestone-vertical .content {
+    max-width: 300px;
+    flex-shrink: 1;
+  }
+  
+  
+  .milestone-vertical .content {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    max-width: 320px;
+    box-shadow: 0 0 20px rgba(0, 128, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+  
+  .milestone-vertical .content:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  }
+  
+  .milestone-vertical.expanded .content {
+    background: rgba(0, 128, 255, 0.12);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    max-width: 420px;
+    animation: popIn 0.4s ease forwards;
+  }
+  
+  @keyframes popIn {
+    from {
+      transform: scale(0.98);
+      opacity: 0.85;
+    }
+    to {
+      transform: scale(1.03);
+      opacity: 1;
+    }
+  }
+  
+  .milestone-vertical .content h3 {
+    font-size: 1.3rem;
+    color: #90cdf4;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 0 3px #0072ff;
+  }
+  
+  .milestone-vertical .content p {
+    font-size: 1rem;
+    color: #cbd5e0;
+    transition: all 0.3s ease;
+  }
+  
+  /* ✅ Responsive */
+  @media (max-width: 768px) {
+    .milestone-vertical {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .milestone-vertical.left .content,
+    .milestone-vertical.right .content {
+      margin: 0 auto;
+    }
+  
+    .road-line-vertical,
+    .road-divider {
+      left: 10px;
+    }
+  
+    .car-vertical {
+      left: 10px;
+      transform: none;
+    }
+  }
+  

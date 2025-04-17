@@ -1,0 +1,3497 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(145deg, #6a0dad, #b39ddb); /* Purple DXC theme */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Prevents scrolling */
+}
+.nav-button {
+    text-decoration: none; /* Removes underline */
+    /* Optional: ensure consistent button appearance */
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF; /* Or your preferred color */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Logo Styling - Positioned Upwards */
+.logo {
+    width: 150px; /* Adjusted size */
+    padding-bottom: 20px;
+    opacity: 0.9; /* Light transparency */
+    filter: drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.3)); /* Blended shadow effect */
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    top: -20px; /* Moves logo upwards */
+}
+
+/* Background video styling */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover full screen */
+    z-index: -1; /* Keep video in the background */
+}
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+/* Title Styling - Dynamic & Cool Effect */
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5); /* Cool glowing effect */
+    margin-bottom: 1rem; /* Adjusted for better positioning */
+    position: relative;
+    top: -15px; /* Moves heading upwards */
+    animation: glowEffect 2s infinite alternate ease-in-out; /* Dynamic glowing effect */
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Hover Effect for Title */
+.title:hover {
+    transform: scale(1.05); /* Slight zoom-in effect */
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8), 
+                 3px 3px 15px rgba(255, 255, 255, 0.7), 
+                 0px 0px 20px rgba(255, 215, 0, 0.8); /* More glow effect */
+}
+
+/* Keyframe for Glowing Animation */
+@keyframes glowEffect {
+    0% {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                     2px 2px 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8), 
+                     3px 3px 15px rgba(255, 255, 255, 0.7);
+    }
+}
+a.toc-item {
+    text-decoration: none;     /* No underline */
+    color: black;              /* Text color black */
+    display: block;            /* Behaves like a block for spacing */
+    text-align: left;          /* Left-align the text */
+    padding-left: 10px;        /* Optional: adds space from the left edge */
+}
+#background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures the image scales to cover the container */
+    z-index: -1;        /* Keeps it in the background */
+}
+/* Description Styling */
+.description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #f0e6ff;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+/* Button Styling */
+.nav-button {
+    padding: 0.5rem 1.8rem; /* Reduced size */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(145deg, #ffd700, #f09d00);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 223, 0, 0.5);
+}
+
+/* Footer Styling - Positioned Lower */
+.footer {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%; /* Ensures full-width alignment */
+    text-align: center;
+    padding: -20px 5px;
+    background: rgb(255, 255, 255); /* Darker background for better contrast */
+    color: rgb(5, 5, 5);
+    font-size: 1rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Ensure only the active page is visible */
+.page {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Make the active page visible */
+.page.active {
+    display: flex;
+}
+
+/* Smaller Title - Adjusted Spacing */
+.small-title {
+    font-size: 2.2rem; /* Reduced font size */
+    margin-top: -70px; /* Moves heading further up */
+    margin-bottom: 25px; /* Increased space between heading and image */
+}
+
+/* Image Container - Proper Sizing */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%; /* Maintains width */
+    max-height: 60vh; /* Keeps height constant */
+    padding: 15px;
+    margin-bottom: 15px; /* Increased space between image and buttons */
+    position: relative;
+    left: 150px; /* Moves image more to the right */
+}
+
+/* Responsive Image - Wider Without Increasing Height */
+.responsive-image {
+    width: 90%; /* Slightly wider */
+    max-width: 1100px; /* Maximum width */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+/* Hover Effect - Dynamic Interaction */
+.responsive-image:hover {
+    transform: scale(1.03); /* Slight zoom effect, no rotation */
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.4), 
+                0px 0px 25px rgba(237, 233, 22, 0.973); /* Glowing effect */
+}
+
+/* Keyframe Animation for Fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Styling - Matches First Page */
+.button {
+    padding: 0.7rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(145deg, #ffd700, #f09d00);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 223, 0, 0.5);
+}
+
+/* Button Container - Ensures Buttons Stay Below Image */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    bottom: 40px; /* Keeps buttons properly positioned */
+}
+#compute .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.compute-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.compute-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#compute .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+/* Scrollable Description Box */
+.scroll-box {
+    width: 80%;
+    max-width: 900px;
+    height: 220px; /* Set fixed height */
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.6); /* <-- Darker semi-transparent background */
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff; /* Full white text */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    backdrop-filter: blur(3px); /* Optional: adds a soft blur to content behind */
+}
+/* Reusable Stylish Box for All Modules */
+.module-box {
+    width: 85%;
+    max-width: 950px;
+    height: 240px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark */
+    color: #ffffff; /* White text for contrast */
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px); /* Modern glass effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for interactivity */
+.module-box:hover {
+    transform: scale(1.015);
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+}
+
+/* Scrollbar Styling */
+.module-box::-webkit-scrollbar {
+    width: 6px;
+}
+.module-box::-webkit-scrollbar-thumb {
+    background-color: #ffd700;
+    border-radius: 5px;
+}
+.module-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Smooth Scrollbar Customization */
+.scroll-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+    background-color: #ffd700;
+    border-radius: 5px;
+}
+
+.scroll-box::-webkit-scrollbar-track {
+    background: rgba(51, 25, 95, 0.993);
+}
+
+/* Image Container - Proper Sizing */
+.compute-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    max-height: 50vh;
+    padding: 10px;
+    margin-bottom: 40px;
+    position: relative;
+    left: 150px;
+}
+
+/* Responsive Image - Compute Module */
+.compute-image {
+    width: 90%;
+    max-width: 1100px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Hover Effect - Dynamic Interaction */
+.compute-image:hover {
+    transform: scale(1.03); /* Slight zoom effect, no rotation */
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.4), 
+                0px 0px 25px rgba(255, 215, 0, 0.7); /* Glowing effect */
+}
+
+/* Back and Next Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: absolute;
+    bottom: 20px; /* Keeps buttons properly positioned */
+}
+/* Stylish Transparent Comparison Table Wrapper */
+.comparison-wrapper {
+    max-width: 90%;
+    max-height: 420px;
+    overflow-y: auto;
+    margin-top: 0.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6); /* Darker semi-transparent */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px); /* Subtle glass effect */
+}
+
+/* Table Structure */
+.comparison-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-collapse: collapse;
+}
+
+/* Header Row */
+.comparison-header {
+    display: flex;
+    background-color: rgba(75, 0, 130, 0.95); /* Indigo with opacity */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(4px); /* Smooth blur effect on scroll */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.comparison-header div {
+    flex: 1;
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Data Rows */
+.comparison-row {
+    display: flex;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05); /* Light layer for separation */
+    color: #fff;
+}
+
+.comparison-row div {
+    flex: 1;
+    padding: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.comparison-row a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.comparison-row a:hover {
+    color: #ffd700; /* Gold on hover for better UX */
+}
+.comparison-row:last-child a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
+/* Last Column Cleanup */
+.comparison-header div:last-child,
+.comparison-row div:last-child {
+    border-right: none;
+}
+
+/* PDF Link Styling */
+.pdf-link {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pdf-link:hover {
+    text-decoration: underline;
+}
+
+.fixed-bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#compute-comparison .compute-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    margin-top: 30px;
+}
+
+/* Ensure Buttons are Properly Positioned Below Table */
+#compute-comparison .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+#compute-comparison .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#compute-comparison .description {
+    margin-bottom: 15px; /* Increase space between title and comparison table */
+}
+
+/* Ensure three tables fit in one row */
+/* Table of Contents Container */
+.toc-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap; /* Ensure tables stay in one row */
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    max-width: 90vw;
+    padding-bottom: 10px;
+    margin-top: -0px; /* Move the entire TOC up */
+}
+
+/* Table Styling */
+.toc-table {
+    flex: 1;
+    min-width: 250px;
+    max-width: 270px;
+    max-height: 380px; /* Reduce height */
+    overflow-y: auto; /* Each table scrolls */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Header Adjustments - Move Table of Contents Header Up */
+.toc-header {
+    font-size: 1.3rem;
+    color: #ffd700;
+    margin-bottom: 8px;
+    padding-bottom: 10px;
+}
+
+/* Reduce spacing between elements */
+.toc-item {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 8px;
+    margin: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.85rem; /* Reduce font size */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Adjust subtopic styles */
+.subtopics {
+    display: none;
+    margin-top: 3px; /* Reduce spacing */
+}
+
+/* Subtopics now match module background */
+.subtopic-item {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 6px;
+    margin: 2px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+}
+
+/* Adjust button positioning */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 5px 0;
+    margin-top: 10px; /* Reduce space between tables and buttons */
+}
+
+/* Expand Icon */
+.expand-icon {
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+/* Move Table of Contents Title Up */
+#table-of-contents .title {
+    margin-top: -50px; /* Move title up */
+    font-size: 2.0rem; /* Adjust font size slightly */
+    padding-bottom: 2px; /* Add space below title */
+}
+.home-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.home-button {
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffd700, #f09d00);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 223, 0, 0.5);
+}
+
+
+
+#compute-serverless .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+#compute-serverless .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#compute-serverless .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#container-services .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.container-services-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.container-services-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#container-services .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+#container-orchestration .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+#container-orchestration .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#container-orchestration .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#container-management .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #container-management .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#container-management  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+#container-registry .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #container-registry  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#container-registry   .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+#storage .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.storage-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.storage-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#storage .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+#object-storage .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #object-storage  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#object-storage  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+#block-storage .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #block-storage  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#block-storage   .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+#file-storage .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #file-storage .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#file-storage  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+#archive-storage .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #archive-storage  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#archive-storage  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+#backup-storage .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #backup-storage  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#backup-storage   .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#database .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.database-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.database-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#database .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#database-relational .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #database-relational  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#database-relational  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#database-nosql .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #database-nosql  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#database-nosql  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#database-warehouse .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #database-warehouse  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#database-warehouse  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#networking .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.networking-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.networking-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#networking .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#networking-vpn .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #networking-vpn  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#networking-vpn  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#networking-cdn .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #networking-cdn  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#networking-cdn  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#networking-dns .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #networking-dns  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#networking-dns  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#networking-firewall .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #networking-firewall  .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#networking-firewall  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#networking-load-balancing .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #networking-load-balancing .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#networking-load-balancing  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#security .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.security-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.security-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#security .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#security-iam .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #security-iam .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#security-iam  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#security-kms .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #security-kms .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#security-kms  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#security-monitoring .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #security-monitoring .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#security-monitoring  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#analytics .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.analytics-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.analytics-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#analytics .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#analytics-big-data .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #analytics-big-data .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#analytics-big-data  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#analytics-stream .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #analytics-stream .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#analytics-stream  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#analytics-business .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #analytics-business .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#analytics-business  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#data-management .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.data-management-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.data-management-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#data-management .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#data-integration .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #data-integration .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#data-integration  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#data-lake .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #data-lake .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#data-lake  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#ai-machine-learning .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.ai-machine-learning-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.ai-machine-learning-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#ai-machine-learning .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#ai-machine-learning-platform .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #ai-machine-learning-platform .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#ai-machine-learning-platform  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#ai-nlp .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #ai-nlp .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#ai-nlp  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#ai-object-detection .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #ai-object-detection .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#ai-object-detection  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#ai-speech-recognition .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #ai-speech-recognition .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#ai-speech-recognition  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#devops .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+
+/* Compute Page Styling */
+.devops-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+/* Compute Title - Adjusted Position */
+.devops-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+/* Scrollable Description Box - Reduced Top Margin */
+
+
+/* Ensure Only the Compute Page Centers the Box */
+#devops .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#devops-ci-cd .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #devops-ci-cd .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#devops-ci-cd  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#devops-iac .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #devops-iac .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#devops-iac .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#ML .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.ML-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.ML-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#ML .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#logging .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #logging .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#logging .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#monitoring .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #monitoring .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#monitoring .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#iot .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.iot-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.iot-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#iot .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#iot-platform .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #iot-platform .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#iot-platform .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#edge-computing .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #edge-computing .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#edge-computing .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#migration-transfer .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.migration-transfer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.migration-transfer-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#migration-transfer .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#data-transfer .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #data-transfer .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#data-transfer .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#management-governance .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.management-governance-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.management-governance-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#management-governance .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#resource-management .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #resource-management .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#resource-management .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#cost-management .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #cost-management .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#cost-management .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#hybrid-multi-cloud .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.hybrid-multi-cloud-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.hybrid-multi-cloud-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#hybrid-multi-cloud .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#hybrid-cloud-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #hybrid-cloud-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#hybrid-cloud-service .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+
+#quantum-computing .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.quantum-computing-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.quantum-computing-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#quantum-computing .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#quantum-computing-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #quantum-computing-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#quantum-computing-service .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#blockchain .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.blockchain-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.blockchain-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#blockchain .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#blockchain-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #blockchain-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#blockchain-service .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#blockchain-templates .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #blockchain-templates .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#blockchain-templates .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#robotics .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.robotics-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.robotics-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#robotics .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#robotics-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #robotics-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#robotics-service .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#robotics-development .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #robotics-development .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#robotics-development .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#satellite .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.satellite-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.satellite-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#satellite .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#satellite-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #satellite-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#satellite-service .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#ground-station-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #ground-station-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#ground-station-service .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#game-development .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.game-development-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.game-development-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#game-development .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#game-development-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #game-development-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#game-development-service .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#game-server-hosting .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #game-server-hosting .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#game-server-hosting .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#ar-vr .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.ar-vr-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.ar-vr-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#ar-vr .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#ar-vr-development .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #ar-vr-development .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#ar-vr-development  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#business-applications .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.business-applications-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.business-applications-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#business-applications .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#crm .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #crm .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#crm  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#erp .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #erp .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#erp  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#office-productivity .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #office-productivity .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#office-productivity  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#project-management .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #project-management .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#project-management  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#business-intelligence .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #business-intelligence .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#business-intelligence  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+
+#developer-tools .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.developer-tools-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.developer-tools-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#developer-tools .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#api-management .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #api-management .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#api-management  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#ide .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #ide .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#ide  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#artifact-repository .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #artifact-repository .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#artifact-repository  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#code-repository .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #code-repository .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#code-repository .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#dev-environment .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #dev-environment .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#dev-environment  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#application-integration .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.application-integration-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.application-integration-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#application-integration .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#workflow-orchestration .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #workflow-orchestration .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#workflow-orchestration  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#messaging-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #messaging-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#messaging-service  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+
+#daas .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.daas-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.daas-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#daas .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+
+#virtual-desktops .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #virtual-desktops .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#virtual-desktops  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#managed-desktops .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #managed-desktops .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#managed-desktops  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#email-services .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.email-services-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.email-services-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#email-services .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#email-sending-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #email-sending-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#email-sending-service  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#managed-email .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #managed-email .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#managed-email  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#search-services .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.search-services-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.search-services-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#search-services .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#search-engine-service .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #search-engine-service .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#search-engine-service  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#enterprise-search .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #enterprise-search .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#enterprise-search  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#media-services .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.media-services-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.media-services-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#media-services .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#video-processing .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #video-processing .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#video-processing  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#live-streaming .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #live-streaming .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#live-streaming  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#mobile-services .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.mobile-services-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.mobile-services-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#mobile-services .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#mobile-app-development .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #mobile-app-development .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#mobile-app-development  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+#contact-center .scroll-box {
+    width: 85%;
+    max-width: 1000px;
+    height: 330px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.4);/* Light Peach/Salmon */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fffdfd; /* Black text */
+    border: 1px solid rgba(6, 6, 6, 0.97);
+    margin-top: -100px;
+}
+
+.contact-center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+    margin-top: -40px; /* Adjusts positioning */
+}
+
+.contact-center-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffd700; /* Gold contrast */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), 
+                 2px 2px 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    position: relative;
+    top: 0px; /* Ensures it is not pushed down */
+    animation: glowEffect 2s infinite alternate ease-in-out;
+    transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+#contact-center .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+
+
+#cloud-contact-center .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Ensures no overlap */
+    margin-top: 30px; /* More space between table and buttons */
+}
+ #cloud-contact-center .title {
+    font-size: 40px; /* Reduce font size */
+    margin-top: 20px; /* Move title up */
+    margin-bottom: 5px; /* Add spacing below title */
+}
+#cloud-contact-center  .description {
+    font-size: 1.0 rem; /* Reduce font size slightly */
+    margin-bottom: 15px; /* Reduce space between title and table */
+    text-align: center; /* Keep text centered */
+    max-width: 90%; /* Adjust width */
+}
+
+.home-button {
+    padding: 8px;
+    font-size: 24px; /* Adjust size as needed */
+    color: #fff;
+    background: linear-gradient(145deg, #ffd700, #ffd700);
+    border: none;
+    border-radius: 50%; /* Circular button */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 50px; /* Fixed width and height for a round shape */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Hover Effect */
+.home-button:hover {
+    background: rgba(0,0,0,0.4);
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 223, 0, 0.4);
+}
+

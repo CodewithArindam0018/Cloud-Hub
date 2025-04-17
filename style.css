@@ -1,0 +1,1589 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+  #main{
+      position: relative;
+      overflow: hidden;
+      background-color: #1137ca;
+  }
+  @font-face {
+      font-family: a;
+      src: url(./jost-variable.ttf);
+  }
+  @font-face {
+      font-family: b;
+      src: url(./KFOlCnqEu92Fr1MmEU9fBBc4\ \(1\).ttf);
+  }
+  @font-face {
+      font-family: c;
+      src: url(./KFOmCnqEu92Fr1Mu4mxK\ \(1\).ttf);
+  }
+  /*--------------------page 1 ------------*/
+  #page1
+  {
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+  }
+  #page1>video{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+  }
+  #page1>nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px 30px;
+      position: absolute;
+      height: 10vh;
+      width: 100vw;
+  }
+  /*--------------------my logo ------------*/
+  #page1 {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+#page1 > video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page1 > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    position: absolute;
+    height: 10vh;
+    width: 100vw;
+}
+
+/* Responsive Logo - Even Smaller & Lower */
+#page1 > nav > img {
+    width: 10%;  /* Reduced size for better proportion */
+    height: auto;  /* Keeps aspect ratio */
+    display: block;
+    margin: 35px auto 0; /* Keeps it slightly lower */
+}
+
+/* Medium screens (tablets, smaller desktops) */
+@media (max-width: 1024px) {
+    #page1 > nav > img {
+        width: 13%; /* Slightly larger for tablets */
+        margin-top: 40px; /* Lower position */
+    }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+    #page1 > nav > img {
+        width: 18%; /* Larger on small screens for visibility */
+        margin-top: 50px; /* Lower position */
+    }
+}
+
+/* Very small screens (compact mobile devices) */
+@media (max-width: 480px) {
+    #page1 > nav > img {
+        width: 25%; /* Keeps visibility on small devices */
+        margin-top: 60px; /* Further lower */
+    }
+}
+
+
+#right-nav > button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #0b48ed;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: a;
+    font-size: 14px;
+}
+
+.bottom-page1 {
+    position: absolute;
+    bottom: 5%;
+    height: 35vh;
+    width: 50vw;
+    left: 10%;
+}
+
+.bottom-page1 > h1 {
+    font-family: a;
+    font-size: 5vw;
+    font-weight: 100;
+    line-height: 1;
+    color: #141414;
+    margin-bottom: 150%;
+    margin-top: -15%;
+}
+
+.bottom-page1-inner {
+    position: absolute;
+    bottom: 0%;
+    height: 35%;
+    width: 100%;
+}
+
+.bottom-page1-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: a;
+}
+
+.bottom-page1-inner > button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #0b48ed;
+    font-size: 16px;
+    font-family: b;
+    margin-right: 25%;
+    margin-left: 1%;
+    margin-top: -10%;
+}
+
+.bottom-page1-inner > h2 {
+    font-size: 1.4vw;
+    font-weight: 100;
+    color: #6d00c3;
+    margin-bottom: 25%;
+    margin-top: -5;
+}
+
+/* Copyright Styling - Fully Right in Single Line */
+.copyright {
+    position: absolute;
+    bottom: -30px; /* Adjust this based on alignment */
+    right: -210px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    color: rgba(255, 255, 255, 0.9); /* Light White */
+    background: rgba(0, 0, 0, 0.7); /* Slightly Dark Background */
+    padding: 10px 20px;
+    border-radius: 10px; /* Round only the left side */
+    backdrop-filter: blur(8px); /* Smooth Blur Effect */
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.4); /* Soft Right Shadow */
+    text-align: right;
+    width: auto; /* Dynamic width */
+    white-space: nowrap; /* Ensures it stays on one line */
+    z-index: 99;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Stylish Branding (SAMARCH) */
+.copyright span {
+    font-weight: bold;
+    color: #ffcc00; /* Gold Highlight */
+}
+
+/* Hover Effect - Zoom In on Hover */
+.copyright:hover {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.85); /* Darker on Hover */
+    box-shadow: -5px 6px 20px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1); /* Zoom In Effect */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Responsive Adjustments for Copyright */
+@media (max-width: 900px) {
+    .copyright {
+        font-size: 12px;
+        padding: 8px 15px;
+        bottom: -25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .copyright {
+        font-size: 10px;
+        padding: 6px 12px;
+        bottom: -20px;
+    }
+}
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /*--------------------page 2-------------*/
+  #page2 {
+    display: flex;
+    align-items: start;
+    font-family: a;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    padding: 0vw 8vw;
+    color: #fff;
+    background-color: #6d00c3;
+}
+
+#page2 > h2 {
+    font-size: 3.5vw; /* Increased font size */
+    font-weight: bold; /* Make it bolder */
+    color: #ffffff; /* Keep it white for visibility */
+    margin-bottom: 3vw; /* Keep the spacing */
+}
+
+#page2 > h1 {
+    font-size: 2.5vw; /* Reduced font size slightly */
+    font-weight: 300; /* Keep it lighter */
+    line-height: 1.3;
+    width: 70%;
+    color: #dadada69; /* Maintain existing color */
+}
+
+  /*--------------------page 3-------------*/
+    #page3{
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+    }
+    #page3>canvas{
+        max-height: 100vh;
+        max-width: 100vw;
+        position: relative;
+    }
+  /*--------------------page 4-------------*/
+  #page4 {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #6d00c3;
+    font-family: a;
+}
+
+#page4 > h2 {
+    font-size: 3.5vw; /* Increased font size */
+    font-weight: bold; /* Make it bolder */
+    color: #ffffff; /* Keep it white for visibility */
+    margin-left: 15vw;
+    margin-bottom: 2vw;
+}
+
+#page4 > h1 {
+    font-size: 2.5vw; /* Reduced font size slightly */
+    font-weight: 300; /* Keep it lighter */
+    margin-left: 15vw;
+    width: 70%;
+    color: #ffffff81; /* Maintain existing color */
+}
+
+  /*--------------------page 5-------------*/
+  #page5{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+#page5>canvas{
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+  /*--------------------page 6-------------*/
+  #page6 {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #6d00c3;
+    flex-direction: column;
+    font-family: a;
+}
+
+#page6 > h2 {
+    font-size: 3.5vw; /* Increased font size */
+    font-weight: bold; /* Make it bolder */
+    color: #ffffff; /* Keep it white for visibility */
+    margin-left: 15vw;
+    margin-bottom: 2vw;
+}
+
+#page6 > h1 {
+    font-size: 2.5vw; /* Reduced font size slightly */
+    font-weight: 300; /* Keep it lighter */
+    margin-left: 15vw;
+    width: 70%;
+    color: #ffffff53; /* Maintain existing color */
+}
+
+  /*--------------------page 7-------------*/
+
+#page7{
+    position: relative;
+    height: 120vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+#page7>canvas{
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+.page7-cir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+.page7-cir-inner{
+    height: 70%;
+    width: 70%;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+/*--------------------page 8 -------------*/
+/* Styling for Page 8 */
+#page8 {
+    position: relative;
+    width: 100%;
+    min-height: 150vh; /* Increased height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Video Styling - Full Fit Without Cropping */
+#page8 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures full video fit */
+    z-index: 0; /* Keeps video in the background */
+}
+
+/* Bottom Section (Text & Button) - Centered & Stylish */
+.page8-bottom {
+    position: relative;
+    z-index: 2; /* Higher than video */
+    text-align: center;
+    font-family: a;
+    background: rgba(255, 255, 255, 0.2); /* Light Transparent BG */
+    padding: 20px 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px); /* Glassmorphism Effect */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Soft Shadow */
+    transition: 0.3s ease-in-out;
+}
+
+/* Title Styling - More Attractive */
+.page8-bottom h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 4vw;
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out;
+}
+
+/* Button Styling - Same as "Start Course" Button */
+.learn-more-btn {
+    display: inline-block;
+    padding: 18px 30px; /* Same as Page 13 Button */
+    background-color: #6d00c3; /* Same color as "Start Course" button */
+    color: white;
+    font-size: 16px; /* Keep original font size */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px; /* Rounded shape like Page 13 */
+    border: none;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    z-index: 3; /* Higher than video */
+}
+
+/* Hover Effect */
+.learn-more-btn:hover {
+    background-color: #9b00ff; /* Darker shade for hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .page8-bottom {
+        width: 80%;
+        padding: 15px 30px;
+    }
+    .page8-bottom h1 {
+        font-size: 6vw;
+    }
+    .learn-more-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page8-bottom {
+        width: 90%;
+        padding: 12px 25px;
+    }
+    .page8-bottom h1 {
+        font-size: 7vw;
+    }
+    .learn-more-btn {
+        font-size: 12px;
+        padding: 8px 18px;
+    }
+}
+
+  /*--------------------page 9 -------------*/
+/* Styling for Page 9 */
+#page9 {
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: url('https://dxc.scene7.com/is/image/dxc/AdobeStock_939360443-gradient:banner_desktop') no-repeat center center/cover; /* Fullscreen background */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Left Section - Dynamic Text */
+.left9 {
+    width: 40%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 12%;
+}
+
+/* Stylish Text */
+.left9 h1 {
+    font-size: 4.5vw;
+    font-weight: bold;
+    font-family: a;
+    color: #fff;
+    line-height: 1.2;
+    /* text-transform: uppercase; */
+    letter-spacing: 2px;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInText 1.5s ease-in-out;
+}
+
+/* Right Section - Video */
+.right9 {
+    width: 60%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video Full Fit */
+#code22 {
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+    animation: fadeInVideo 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInVideo {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+
+/* ------------------ Page 10 - Full-Screen Video Background with Matching Page 2 Color ------------------ */
+#page10 {
+    position: relative;
+    width: 100vw;
+    height: auto; /* Adjust height dynamically */
+    min-height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content */
+    text-align: center;
+    padding: 5vh 5vw; /* Responsive padding */
+    background-color: #6d00c3; /* Matching Page 2 color */
+    overflow: hidden;
+}
+
+/* Full-screen video styling */
+#page10-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Dark overlay for better contrast */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay for better readability */
+    z-index: -1;
+}
+
+/* Page 10 Text Container */
+.page10-container {
+    width: 90%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Box Styling */
+.page10-box {
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15); /* Transparent glass effect */
+    backdrop-filter: blur(12px); /* Stronger blur effect */
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.page10-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Box Titles */
+.page10-box h1 {
+    font-size: 2.5vw;
+    font-weight: bold;
+    font-family: a;
+    /* text-transform: uppercase; */
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+/* Box Text */
+.page10-box p {
+    font-size: 1.5vw;
+    font-family: a;
+    line-height: 1.6;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page10-box {
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-in-out forwards;
+}
+
+/* --------- ✅ Responsive Design Adjustments ✅ --------- */
+
+/* Medium screens (tablets, smaller desktops) */
+@media (max-width: 1024px) {
+    .page10-container {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+        gap: 25px;
+    }
+
+    .page10-box h1 {
+        font-size: 3vw;
+    }
+
+    .page10-box p {
+        font-size: 1.5vw;
+    }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+    .page10-container {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 20px;
+    }
+
+    .page10-box {
+        padding: 20px;
+    }
+
+    .page10-box h1 {
+        font-size: 4vw;
+    }
+
+    .page10-box p {
+        font-size: 2.5vw;
+    }
+}
+
+/* Very small screens (compact mobile devices) */
+@media (max-width: 480px) {
+    #page10 {
+        padding: 10vh 5vw; /* Adjust padding for better spacing */
+    }
+
+    .page10-box {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .page10-box h1 {
+        font-size: 5vw;
+    }
+
+    .page10-box p {
+        font-size: 3vw;
+    }
+}
+
+ /*--------------------page 11 (Now Team Section) -------------*/
+/* Main container (#main) */
+#main {
+    position: relative;
+    overflow: hidden; /* LOCOMOTIVE ke liye ye hi rakhna hoga, auto mat karo */
+    background-color: #1137ca;
+}
+
+#page11 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vw 0;
+}
+
+#team-bg-video {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    z-index: -1;
+}
+
+/* 🔥 Ye important hai aur final fix hai (isse overflow issue 100% fix hoga) */
+#page11 video {
+    pointer-events: none; /* video ke event ko disable kar dega */
+}
+
+
+
+/* Title Styling */
+.team-title {
+    font-size: 4vw;
+    color: white;
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    margin-bottom: 2vw;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Team Row Styling */
+.team-row {
+    display: flex;
+    width: 85vw;
+    justify-content: space-between;
+    margin-bottom: 3vw;
+}
+
+Space Arindam and Shivam on Borders
+.team-row.space-between {
+    justify-content: space-between;
+}
+
+/* Centered Rows */
+.team-row.centered {
+    justify-content: center;
+    gap: 2vw;
+}
+
+/* Single row for Abhijeet */
+.team-row.single {
+    justify-content: center;
+}
+
+/* Team Member Container */
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 1.5 vw;
+    width: 100vw;
+}
+
+Only Shivam’s Video Should Be on Right
+.team-member.reverse {
+    flex-direction: column-reverse
+}
+
+
+/* Video Styling */
+.team-video {
+    width: 35%;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Video Inside */
+.team-video video {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+/* Increase size of Arindam & Shivam's videos */
+#page11 .team-row.space-between .team-video {
+    width: 45%; /* Increase width */
+    max-height: 350px; /* Increase height */
+}
+/* Move Arindam's video further to the left */
+#page11 .team-row.space-between .team-member:first-child {
+    margin-left: -3.5vw; /* Shift left */
+}
+
+/* Move Shivam's video further to the right */
+#page11 .team-row.space-between .team-member:last-child {
+    margin-right: -4.5vw; /* Shift right */
+}
+/* Swap text and video for Meghana Adepu and Swathi */
+#page11 .team-row.centered .team-member:nth-child(2) {
+    flex-direction: row-reverse; /* This only applies to the second member in centered rows */
+}
+/* Move Reetika's text closer to the edge */
+#page11 .team-row.centered .team-member:first-child .team-info {
+    margin-left: -4vw; /* Shift left */
+}
+
+
+/* Move Meghana's text closer to the edge */
+#page11 .team-row.centered .team-member:last-child .team-info {
+    margin-right: -5.5vw; /* Shift right */
+}
+
+/* Move Chandni's text closer to the edge */
+#page11 .team-row.centered:nth-of-type(2) .team-member:first-child .team-info {
+    margin-left: -5.5vw; /* Shift left */
+}
+
+/* Move Swathi's text closer to the edge */
+#page11 .team-row.centered:nth-of-type(2) .team-member:last-child .team-info {
+    margin-right: -4vw; /* Shift right */
+}
+/* Increase size of Meghana, Swathi, Reetika, and Chandni's videos */
+#page11 .team-row.centered .team-video {
+    width: 45%; /* Match size with Arindam & Shivam */
+    max-height: 350px; /* Increase height to match */
+}
+/* Center Abhijeet's Video */
+#page11 .team-row.single {
+    display: flex;
+    justify-content: center; /* Ensures horizontal centering */
+    align-items: center; /* Ensures vertical centering */
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Ensure Abhijeet's video matches Arindam's size */
+#page11 .team-row.single .team-video {
+    max-width: 600px; /* Adjusted to match Arindam's video */
+    height: 325px; /* Set same height as Arindam's */
+    margin: 0 auto; /* Keep it centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+/* Center Abhijeet's text below his video */
+#page11 .team-row.single-text {
+    display: flex;
+    justify-content: center; /* Ensures horizontal centering */
+    align-items: center; /* Centers vertically */
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2vw; /* Adds space between video and text */
+}
+
+/* Ensure text remains centered */
+#page11 .team-row.single-text .team-info {
+    width: 50%; /* Set proper width for better readability */
+    text-align: center; /* Centers the text */
+    margin: 0 auto; /* Ensures perfect centering */
+}
+/* Reduce space between Abhijeet's video and text */
+#page11 .team-row.single-text {
+    margin-top: -1vw; /* Reduce the gap */
+}
+
+/* Team Info */
+.team-info {
+    width: 45%;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1vw 2vw;
+    gap: 2vw;
+}
+
+/* Centered alignment for text */
+.team-row.centered .team-info {
+    text-align: center;
+    width: 65%;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .team-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .team-video, .team-info {
+        width: 100%;
+    }
+
+    .team-info h2 {
+        font-size: 4vw;
+    }
+
+    .team-info p {
+        font-size: 3vw;
+    }
+}
+/* Glow effect for Team Section */
+.team-info h2,
+.team-info h4,
+.team-info p {
+    color: white;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Glowing effect on hover */
+.team-info:hover h2,
+.team-info:hover h4,
+.team-info:hover p {
+    text-shadow: 0 0 10px #9a00ff, 0 0 20px #6d00c3, 0 0 30px #6d00c3;
+    cursor: pointer;
+}
+/* Default styling for Meet Our Team */
+.team-title {
+    font-size: 4vw;
+    color: white;
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    margin-bottom: 2vw;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Glowing effect on hover */
+.team-title:hover {
+    text-shadow: 0 0 10px #FFA500, 0 0 20px #FFD700, 0 0 30px #FF8C00; /* Yellow-orange glow */
+    color: #FFD700; /* Golden Yellow */
+    cursor: pointer;
+}
+
+
+/* ------------------ Page 12 - Blog Section (All Blogs Inside One Div, Less Space) ------------------ */
+#page12 {
+    position: relative;
+    height: 160vh; /* Adjusted for blog content */
+    width: 100vw;
+    background-color: #6d00c3; /* Clean background */
+    font-family: a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vw 0;
+}
+
+/* 3D Button Styling for "Recent Blog" */
+.blog-btn {
+    display: inline-block;
+    padding: 18px 50px; /* Adjusted padding */
+    font-size: 1.8vw;
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    color: white;
+    background: linear-gradient(135deg, #FFC300, #FF5733); /* Vibrant Yellow-Red Gradient */
+    border: none;
+    border-radius: 50px; /* Rounded edges */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 6px 15px rgba(135, 4, 223, 0.893); /* Soft glow */
+    text-align: center;
+    outline: none;
+}
+/* Ensure the text inside the button is white, bold, and has no underline */
+.blog-btn a {
+    color: white !important; /* Force white text */
+    font-weight: bold; /* Make text bold */
+    text-decoration: none !important; /* Remove underline */
+    display: inline-block; /* Ensures text behaves correctly inside the button */
+}
+
+
+/* Button Hover Effect */
+.blog-btn:hover {
+    background: linear-gradient(135deg, #FF5733, #6d00c3); /* Reverse gradient */
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(173, 0, 255, 0.7); /* Glow effect */
+}
+
+/* Active Effect (Click Animation) */
+.blog-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0px 4px 10px rgba(109, 0, 195, 0.4);
+}
+
+
+/* Blog Container */
+.page12-container {
+    width: 90%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+/* Blog Post */
+.page12-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw;
+    width: 100%;
+}
+
+/* Blog Image */
+.left12 {
+    position: relative;
+    height: 180px;
+    width: 50%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left12 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 1s ease-in-out;
+}
+
+/* Hover Effect */
+.left12:hover img {
+    transform: scale(1.1);
+}
+
+/* Blog Content */
+.right12 {
+    padding: 1vw;
+    color: #fff;
+    width: 48%;
+    text-align: left;
+}
+
+/* Blog Date */
+.right12 h4 {
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 0.5vw;
+}
+
+/* Blog Title */
+.right12 h1 {
+    font-size: 1.7vw;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.4;
+}
+
+/* Read More Button */
+/* Read More Button */
+.right12 > a {
+    display: inline-block;
+    padding: 10px 24px;
+    font-size: 1vw;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #6d00c3, #9a00ff);
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 10px rgba(109, 0, 195, 0.3);
+    backdrop-filter: blur(8px);
+    margin-top: 1.5vw; /* Increases space between text and button */
+}
+
+/* Hover Effect */
+.right12 > a:hover {
+    background: linear-gradient(135deg, #9a00ff, #6d00c3);
+    transform: scale(1.08);
+    box-shadow: 0px 6px 20px rgba(173, 0, 255, 0.5);
+}
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .blog-btn {
+        font-size: 3vw;
+        padding: 12px 25px;
+    }
+}
+
+ /*--------------------page 13-------------*/
+ #page13{
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-family: a;
+    padding: 7vw 10vw;
+}
+#page13>h1{
+    font-size: 5vw;
+    line-height: 1;
+    font-weight: 100;
+}
+#page13>button{
+    padding: 18px 30px;
+    border: none;
+    background-color: #6d00c3;
+    color: #fff;
+    border-radius: 50px;
+    margin-top: 2vw;
+}
+
+  /*--------------------page 14-------------*/ 
+#page14{
+    position: relative;
+    height: 60vh;
+    width: 100vw;
+    background-color: #000;
+}
+.page14-inner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 5vw;
+    font-family: a;
+    height: 33.3%;
+    width: 100%;
+    color: #fff;
+    border-top: .5px solid #ffffff5c;
+    border-bottom: .5px solid #ffffff48;
+}
+.page14-inner>i{
+    font-weight: 100;
+    font-size: 2.4vw;
+    position: relative;
+    z-index: 9999;
+}
+.page14-inner > h1 {
+    font-size: 3vw;
+    font-weight: bold;
+    position: relative;
+    z-index: 9999;
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.page14-inner * {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+/* Reduce left margin of social media links */
+.page14-inner {
+    padding: 0vw 1vw; /* Reduced padding from 5vw to 3vw */
+}
+
+.center14{
+    height: 0%;
+    width: 100%;
+    background-color: #0a3cce;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all ease .5s;
+}
+
+
+.page14-inner:hover .center14{
+    height: 100%;
+}
+nav .fas{
+    display: none;
+}
+@media only screen and (max-width : 600px){
+    #page1>nav>img{ 
+        width: 19%;
+        mix-blend-mode: lighten;
+    }
+    .bottom-page1>h1{
+        font-family: a;
+        font-size: 6vw;
+        font-weight: 100;
+        line-height: 1;
+        color: #fff;
+        margin-bottom: 200%;
+        margin-top: -40%;
+        margin-left: -15%;
+    }
+    .bottom-page1-inner>h4{
+        font-size: 12px;
+        font-weight: 100;
+        color: #fff;
+        margin-bottom: 120%;
+        margin-top: -5;
+        margin-left: -15%;
+    }
+    .bottom-page1-inner>button{
+        padding:.2rem 1.5rem ;
+        margin-bottom: -15%;
+    }
+    .right9-center{
+        height: 30%;
+    }
+    .right10-inner>h1{
+        font-size: 3vw;
+        margin-top: -20%;
+    }
+    .right10-inner>p{
+        margin-top: 0%;
+        font-size: 2vw;
+    }
+
+}
+.right10 {
+    height: 100%;
+    width: 60%;
+    position: relative;
+    left: 40%;
+    top: -5%;
+}
+/* Glow effect for social media links */
+.page14-inner h1 a {
+    color: white;  /* Default white color */
+    transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Golden Glow Effect on Hover */
+.page14-inner:hover h1 a {
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFB800, 0 0 30px #FFA500; /* Gold glow */
+    color: #FFD700; /* Gold color */
+    cursor: pointer;
+}
+
+ /*--------------------page 11-------------*/
+.page11 {
+    position: relative;
+    height: 90vh;
+    width: 100vw;
+    background-color: #fff;
+    font-family: a;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.page11-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 1.5vw;
+    height: 30vh;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5vw 0;
+}
+
+.left11 {
+    height: 100%;
+    width: 42%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left11 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s;
+}
+
+.left11:hover img {
+    transform: scale(1.05);
+}
+
+.right11 {
+    width: 53%;
+    padding-left: 2vw;
+    text-align: left;
+    font-family: a;
+    color: #000;
+}
+
+.right11 h4 {
+    font-weight: 100;
+    margin-bottom: 0.5vw;
+    font-size: 1vw;
+}
+
+.right11 h1 {
+    font-size: 1.3vw;
+    line-height: 1.2;
+}
+
+.page11-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 28vh;
+    width: 90%;
+    margin-bottom: 1vh;
+    padding: 1vw 0;
+    overflow: hidden;
+}
+
+.left11 {
+    height: 100%;
+    width: 45%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left11 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s;
+}
+
+.left11:hover img {
+    transform: scale(1.05);
+}
+
+.right11 {
+    width: 50%;
+    padding-left: 1vw;
+    text-align: left;
+    font-family: a;
+    color: #000;
+}
+
+.right11 h4 {
+    font-weight: 100;
+    margin-bottom: 0.3vw;
+    font-size: 1vw;
+}
+
+.right11 h1 {
+    font-size: 1.4vw;
+    line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+    .page11-inner {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .left11 {
+        width: 80%;
+        height: auto;
+    }
+
+    .right11 {
+        width: 80%;
+        padding-left: 0;
+    }
+}
+
+ /*--------------------page 13-------------*/
+#page13 {
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-family: a;
+    padding: 5vw 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#page13 > h1 {
+    font-size: 5vw;
+    line-height: 1;
+    font-weight: 100;
+    margin-bottom: 2vw;
+}
+
+#page13 > button {
+    padding: 18px 30px;
+    border: none;
+    background-color: #6d00c3;
+    color: #fff;
+    border-radius: 50px;
+    margin-top: -1.5vw;
+    position: relative;
+    z-index: 2;
+}
+
+ /*--------------------page 13-------------*/
+@media (max-width: 768px) {
+    #page13 {
+        height: auto;
+        padding: 7vw 5vw;
+    }
+
+    #page13 > h1 {
+        font-size: 6vw;
+    }
+
+    #page13 > button {
+        margin-top: 0;
+    }
+}
+
+#page13 {
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-family: a;
+    padding: 5vw 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#page13 > h1 {
+    font-size: 5vw;
+    line-height: 1;
+    font-weight: 100;
+    margin-bottom: 3vw;
+}
+
+#page13 > button {
+    padding: 18px 30px;
+    border: none;
+    background-color: #6d00c3;
+    color: #fff;
+    border-radius: 50px;
+    margin-top: 1vw;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    #page13 {
+        height: auto;
+        padding: 7vw 5vw;
+    }
+
+    #page13 > h1 {
+        font-size: 6vw;
+        margin-bottom: 4vw;
+    }
+
+    #page13 > button {
+        margin-top: 2vw;
+    }
+}
+
+.page14-inner:hover .center14 {
+    height: 100%;
+    background-color: #6d00c3;
+}
+
+.page14-inner:hover h1,
+.page14-inner:hover i {
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.center14 {
+    height: 0%;
+    width: 100%;
+    background-color: #6d00c3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all ease 0.5s;
+}
+
+.page14-inner:hover .center14 {
+    height: 100%;
+}
+
+ /*--------------------page 14-------------*/
+#page13 {
+    position: relative;
+    height: 60vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5vw;
+}
+
+#page13 h1 {
+    font-size: 4vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: linear-gradient(90deg, #6d00c3, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2vw;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#page13 button {
+    padding: 15px 40px;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border: 2px solid #6d00c3;
+    border-radius: 50px;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+#page13 button:hover {
+    background: #6d00c3;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    #page13 {
+        height: auto;
+        padding: 10vw 5vw;
+    }
+    
+    #page13 h1 {
+        font-size: 6vw;
+        margin-bottom: 5vw;
+    }
+
+    #page13 button {
+        font-size: 4vw;
+        padding: 12px 30px;
+    }
+}
+
+
+
+

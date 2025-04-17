@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud Hub Vertical Roadmap</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Cloud Hub Project Journey</h1>
+    <p class="subtitle">Track the vertical roadmap of the Cloud Hub transformation.</p>
+
+    <div class="roadmap-vertical">
+      <div class="road-line-vertical"></div>
+      <div class="road-divider"></div>
+
+      <!-- Car -->
+      <div class="car-vertical">
+        <img src="assests/car2.png" alt="Top View Car" />
+      </div>
+
+      <!-- Milestones -->
+      <div class="milestone-vertical left" data-short="Initial setup..." data-full="Initial infrastructure setup and scope definition. Includes core cloud needs, team roles, and deadlines.">
+        <div class="content">
+          <h3>1. Project Kickoff</h3>
+          <p>Initial setup...</p>
+        </div>
+      </div>
+
+      <div class="milestone-vertical right" data-short="Multi-cloud integration..." data-full="Multi-cloud API integration allows all platforms to work from a unified dashboard.">
+        <div class="content">
+          <h3>2. Cloud Integration</h3>
+          <p>Multi-cloud integration...</p>
+        </div>
+      </div>
+
+      <div class="milestone-vertical left" data-short="User roles setup..." data-full="Implement user roles, authentication systems, and tailored dashboards. Security focused.">
+        <div class="content">
+          <h3>3. User Management</h3>
+          <p>User roles setup...</p>
+        </div>
+      </div>
+
+      <div class="milestone-vertical right" data-short="Analytics module..." data-full="Add real-time monitoring, usage analytics, and alert systems for performance tracking.">
+        <div class="content">
+          <h3>4. Analytics & Monitoring</h3>
+          <p>Analytics module...</p>
+        </div>
+      </div>
+
+      <div class="milestone-vertical left" data-short="Launch & support..." data-full="Final QA, deployment setup, documentation and support handover with user feedback loop.">
+        <div class="content">
+          <h3>5. Go Live & Support</h3>
+          <p>Launch & support...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const car = document.querySelector('.car-vertical');
+    const carImg = car.querySelector("img");
+    const milestones = document.querySelectorAll('.milestone-vertical');
+    const road = document.querySelector('.roadmap-vertical');
+    let currentCarIndex = 0;
+  
+    // Function to move the car smoothly
+    function moveCarTo(index) {
+      const milestone = milestones[index];
+      const rect = milestone.getBoundingClientRect();
+      const roadRect = road.getBoundingClientRect();
+      const offset = rect.top - roadRect.top;
+      const goingBack = index < currentCarIndex;
+  
+      // 🔁 Set rotation based on direction
+      if (goingBack) {
+        car.classList.add("facing-up");
+        car.classList.remove("facing-down");
+  
+        // ⏳ Rotate first, then move
+        setTimeout(() => {
+          car.style.top = `${offset + 20}px`;
+        }, 600);
+      } else if (index > currentCarIndex) {
+        car.classList.remove("facing-up");
+        car.classList.add("facing-down");
+  
+        // ⏳ Rotate first, then move
+        setTimeout(() => {
+          car.style.top = `${offset + 20}px`;
+        }, 600);
+      }
+  
+      currentCarIndex = index;
+    }
+  
+    // 📦 Milestone expand/collapse and car move
+    milestones.forEach((milestone, index) => {
+      milestone.addEventListener('click', () => {
+        const isExpanded = milestone.classList.contains('expanded');
+        const p = milestone.querySelector('p');
+  
+        // Collapse all
+        milestones.forEach(m => {
+          m.classList.remove('expanded');
+          const para = m.querySelector('p');
+          para.textContent = m.getAttribute('data-short');
+        });
+  
+        // Expand selected one
+        if (!isExpanded) {
+          milestone.classList.add('expanded');
+          p.textContent = milestone.getAttribute('data-full');
+          moveCarTo(index);
+        }
+      });
+    });
+  
+    // ✅ Initialize car position (NO transition)
+    window.addEventListener('load', () => {
+      car.style.transition = 'none'; // disable transition initially
+  
+      const firstRect = milestones[0].getBoundingClientRect();
+      const roadRect = road.getBoundingClientRect();
+      const offset = firstRect.top - roadRect.top;
+      car.style.top = `${offset + 20}px`;
+  
+      // ✅ Enable smooth transition AFTER initial placement
+      setTimeout(() => {
+        car.style.transition = 'top 0.6s ease-in-out';
+      }, 100);
+    });
+  </script>
+  
+  
+  
+  
+  
+  
