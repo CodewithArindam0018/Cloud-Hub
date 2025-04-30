@@ -1,213 +1,292 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1c0522, #3d1c5c, #5c2a9d, #2e004f);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+  color: #e8e6f8;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
-    background-size: 400% 400%;
-    animation: bgShift 20s ease infinite;
-    color: #e2e8f0;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @keyframes bgShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #c084fc, #a78bfa, #7c3aed);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
   }
-  
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
+  100% {
+    background-position: 200% center;
   }
-  
-  h1 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .subtitle {
-    text-align: center;
-    color: #a0aec0;
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .roadmap-vertical {
-    position: relative;
-    width: 100%;
-    height: 1800px;
-    padding: 50px 0;
-  }
-  
-  .road-line-vertical {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 100px;
-    height: 100%;
-    background: rgba(0, 128, 255, 0.1);
-    border: 2px solid rgba(0, 128, 255, 0.3);
-    backdrop-filter: blur(8px);
-    border-radius: 50px;
-    transform: translateX(-50%);
-    z-index: 1;
-    box-shadow: 0 0 30px rgba(0, 128, 255, 0.2);
-  }
-  
-  .road-divider {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 6px;
-    height: 100%;
-    background: repeating-linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8) 20px,
-      transparent 20px,
-      transparent 40px
-    );
-    transform: translateX(-50%);
-    z-index: 2;
-    filter: drop-shadow(0 0 6px white);
-  }
-  
-  .car-vertical {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: auto;
-    z-index: 3;
-    transition: top 0.6s ease-in-out;
-    filter: drop-shadow(0 0 12px #00c6ff);
-  }
-  
-  .car-vertical img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    transform: rotate(270deg);
-    transition: transform 0.6s ease-in-out;
-  }
-  
-  .car-vertical.facing-up img {
-    transform: rotate(90deg);
-  }
-  
-  .car-vertical.facing-down img {
-    transform: rotate(270deg);
-  }
-  
-  .milestone-vertical {
-    position: relative;
-    width: 100%;
-    display: flex;
-    margin: 80px 0;
-  }
-  
-  /* ✅ Push milestone box further from road to avoid overlap */
+}
+
+.subtitle {
+  text-align: center;
+  color: #d2c1f7;
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.roadmap-vertical {
+  position: relative;
+  width: 100%;
+  min-height: 1800px;
+  padding: 60px 0;
+}
+
+.road-line-vertical {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 40px;
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.road-divider {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 20px,
+    transparent 20px,
+    transparent 40px
+  );
+  transform: translateX(-50%);
+  z-index: 2;
+  filter: drop-shadow(0 0 6px #ffffff90);
+}
+
+.car-vertical {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55px;
+  height: auto;
+  z-index: 3;
+  transition: top 0.6s ease-in-out;
+  filter: drop-shadow(0 0 12px #c5a3ff);
+}
+
+.car-vertical img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: rotate(270deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+.car-vertical.facing-up img {
+  transform: rotate(90deg);
+}
+
+.car-vertical.facing-down img {
+  transform: rotate(270deg);
+}
+
+.milestone-vertical {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin: 80px 0;
+  transition: transform 0.3s ease;
+}
+
 .milestone-vertical.left .content {
-    margin-left: -40px;   /* increased from 40px */
-    margin-right: auto;
+  margin-left: -70px;
+  margin-right: auto;
+}
+
+.milestone-vertical.right .content {
+  margin-right: -70px;
+  margin-left: auto;
+}
+
+.milestone-vertical .content {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem 2.2rem;
+  max-width: 360px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.milestone-vertical .content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
+}
+
+.milestone-vertical .content.collapsed {
+  max-height: 160px;
+  overflow: hidden;
+}
+
+.milestone-vertical.expanded .content {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  max-width: 420px;
+  max-height: 550px;
+  overflow-y: auto;
+  animation: popIn 0.4s ease forwards;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.98);
+    opacity: 0.85;
   }
-  
-  .milestone-vertical.right .content {
-    margin-right: -40px;  /* increased from 40px */
-    margin-left: auto;
-  }
-  
-  /* ✅ Limit max width and allow flex to shrink when needed */
-  .milestone-vertical .content {
-    max-width: 300px;
-    flex-shrink: 1;
-  }
-  
-  
-  .milestone-vertical .content {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 1.5rem 2rem;
-    max-width: 320px;
-    box-shadow: 0 0 20px rgba(0, 128, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    cursor: pointer;
-    transition: all 0.4s ease;
-    position: relative;
-  }
-  
-  .milestone-vertical .content:hover {
+  to {
     transform: scale(1.03);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    opacity: 1;
   }
-  
-  .milestone-vertical.expanded .content {
-    background: rgba(0, 128, 255, 0.12);
-    border: 1px solid rgba(0, 255, 255, 0.4);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-    max-width: 420px;
-    animation: popIn 0.4s ease forwards;
+}
+
+.milestone-vertical .content h3 {
+  font-size: 1.5rem;
+  color: #e2d9ff;
+  margin-bottom: 0.7rem;
+}
+
+.milestone-vertical .content p {
+  font-size: 1.05rem;
+  color: #ddd2f7;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+}
+
+.milestone-vertical .content::-webkit-scrollbar {
+  width: 8px;
+}
+.milestone-vertical .content::-webkit-scrollbar-thumb {
+  background-color: #a888ff;
+  border-radius: 10px;
+}
+.milestone-vertical .content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.footer {
+  width: 100%;
+  padding: 2.8rem 1.5rem;
+  text-align: center;
+  background: radial-gradient(circle at top center, #2b1055, #3d1c71 40%, #5f2c82 80%);
+  color: #e7dcff;
+  font-size: 1.3rem;
+  margin-top: 6rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff7de9, #9b5de5, #6a4c93, #ff7de9);
+  background-size: 400% 400%;
+  animation: moveGlow 8s linear infinite;
+  z-index: 2;
+}
+
+@keyframes moveGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.footer p {
+  margin: 0;
+  position: relative;
+  z-index: 3;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.footer a {
+  color: #d5c4f0;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffb7ff;
+  text-shadow: 0 0 8px #ffb7ff;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer {
+    font-size: 1.1rem;
+    padding: 2rem 1rem;
   }
-  
-  @keyframes popIn {
-    from {
-      transform: scale(0.98);
-      opacity: 0.85;
-    }
-    to {
-      transform: scale(1.03);
-      opacity: 1;
-    }
-  }
-  
-  .milestone-vertical .content h3 {
-    font-size: 1.3rem;
-    color: #90cdf4;
-    margin-bottom: 0.6rem;
-    text-shadow: 0 0 3px #0072ff;
-  }
-  
-  .milestone-vertical .content p {
-    font-size: 1rem;
-    color: #cbd5e0;
-    transition: all 0.3s ease;
-  }
-  
-  /* ✅ Responsive */
-  @media (max-width: 768px) {
-    .milestone-vertical {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .milestone-vertical.left .content,
-    .milestone-vertical.right .content {
-      margin: 0 auto;
-    }
-  
-    .road-line-vertical,
-    .road-divider {
-      left: 10px;
-    }
-  
-    .car-vertical {
-      left: 10px;
-      transform: none;
-    }
-  }
-  
+}
+
+

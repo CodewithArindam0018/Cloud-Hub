@@ -852,8 +852,8 @@ Only Shivam’s Video Should Be on Right
 
 /* Ensure Abhijeet's video matches Arindam's size */
 #page11 .team-row.single .team-video {
-    max-width: 600px; /* Adjusted to match Arindam's video */
-    height: 325px; /* Set same height as Arindam's */
+    width: 45%; /* Adjusted to match Arindam's video */
+    max-height: 350px; /* Set same height as Arindam's */
     margin: 0 auto; /* Keep it centered */
     display: flex;
     justify-content: center;
@@ -954,8 +954,87 @@ Only Shivam’s Video Should Be on Right
     color: #FFD700; /* Golden Yellow */
     cursor: pointer;
 }
+@media (max-width: 900px) {
+    #page11 {
+        padding: 8vw 0;
+    }
 
+    .team-title {
+        font-size: 6vw;
+        text-align: center;
+    }
 
+    .team-row {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 5vw;
+        margin-bottom: 6vw;
+    }
+
+    .team-member {
+        width: 90% !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 2vw !important;
+    }
+
+    .team-video {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 280px;
+        margin-bottom: 2vw;
+    }
+
+    .team-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .team-info {
+        width: 100% !important;
+        padding: 2vw;
+    }
+
+    .team-info h2 {
+        font-size: 5vw;
+        margin-bottom: 1vw;
+    }
+
+    .team-info h4 {
+        font-size: 3.5vw;
+        margin-bottom: 1vw;
+    }
+
+    .team-info p {
+        font-size: 3.5vw;
+        line-height: 1.4;
+    }
+
+    /* Reetika and Abhijeet section fix */
+    .team-row.single,
+    .team-row.single-text {
+        flex-direction: column !important;
+        text-align: center;
+        align-items: center;
+    }
+
+    .team-row.single .team-video {
+        width: 100% !important;
+        max-height: 280px;
+    }
+
+    .team-row.single-text .team-info {
+        width: 100% !important;
+        padding: 2vw;
+    }
+
+    /* Remove forced margins that break mobile layout */
+    .team-info,
+    .team-member {
+        margin: 0 !important;
+    }
+}
 /* ------------------ Page 12 - Blog Section (All Blogs Inside One Div, Less Space) ------------------ */
 #page12 {
     position: relative;
